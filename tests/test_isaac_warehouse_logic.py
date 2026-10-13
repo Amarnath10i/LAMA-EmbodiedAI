@@ -28,7 +28,7 @@ import types
 
 import numpy as np
 import pytest
-import torch
+torch = pytest.importorskip("torch")  # the Isaac backend logic is tested with real torch tensors
 
 # --------------------------------------------------------------------------- #
 # a minimal fake isaaclab, injected before isaac_warehouse.py is imported

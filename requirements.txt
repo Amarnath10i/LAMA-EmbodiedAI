@@ -1,11 +1,10 @@
-# Core
+# The LAMA system, experiments and the Streamlit app (NumPy backend, CPU only)
 numpy>=1.26
-torch>=2.2
-
-# Rendering and figures
 pillow>=10.0
 imageio>=2.30
 matplotlib>=3.8
+pandas>=2.0
+streamlit>=1.37
 
 # Tests
 pytest>=8.0
@@ -13,3 +12,7 @@ pytest>=8.0
 # Optional: accelerates nearest-neighbour search over the affordance bank.
 # The code falls back to a numpy implementation when this is absent.
 # faiss-cpu>=1.8
+
+# The Isaac Lab backend needs PyTorch and its own environment: see
+# requirements-isaac.txt and docs/ISAAC_LAB_SETUP.md. Its logic tests run
+# when torch is installed and are skipped otherwise.

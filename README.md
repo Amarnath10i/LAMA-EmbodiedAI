@@ -226,7 +226,7 @@ docs/RESEARCH_FINDINGS.md        gaps addressed, experiments run, results includ
 docs/ISAAC_LAB_SETUP.md          Isaac Lab backend setup, pinned versions, current status
 outputs/                         real experiment results from both backends and the baseline comparison
 aura_warehouse_sim/         prior work: AURA navigation-only warehouse prototype
-AURA_Project_Plan.pdf       prior work: the AURA research plan this project grew from
+files/AURA_Project_Plan.pdf prior work: the AURA research plan this project grew from
 files/EmbodiedAI.zip        prior work: an earlier object-function-discovery project
 ```
 
@@ -239,9 +239,19 @@ motivates LAMA's emphasis on interaction efficiency.
 
 ```bash
 pip install -r requirements.txt
+streamlit run app.py      # interactive demo
+pytest                    # 210 tests; the Isaac backend's logic tests run when torch is installed
 ```
 
-CPU is sufficient for everything currently planned on the numpy backend.
+CPU is sufficient for everything on the numpy backend, and the demo also runs in
+the browser (NumPy only). It lets you:
+
+- run any selection policy for up to 60 episodes on one persistent memory and
+  watch confirmed knowledge accumulate;
+- inspect the affordance bank (status, posterior mean, attempts per
+  `(concept, verb, tool)`) and the step log of the last episode;
+- rerun the controlled policy comparison live, and read the published
+  15-seed x 40-episode results.
 
 To run the Isaac Lab backend, see `docs/ISAAC_LAB_SETUP.md` -- it needs a
 separate Python 3.10 environment and an RTX-class GPU, and pins specific
